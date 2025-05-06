@@ -40,7 +40,7 @@ const Navbar = () => {
 
       {/* Logo */}
       <Link to="/" onClick={() => setOpen(false)}>
-        <img className="h-9 mr-30" src={assets.logo} alt="logo" />
+        <img className=" h-10 scale-250 mr-30" src={assets.logo} alt="logo" />
       </Link>
 
       {/* Desktop Menu */}
