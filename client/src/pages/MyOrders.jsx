@@ -100,6 +100,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import axios from 'axios';
+import { formatDistanceToNow } from 'date-fns';
+
 
 const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
@@ -112,6 +114,7 @@ const MyOrders = () => {
       const { data } = await axios.get("/api/order/user");
       if (data?.success) {
         setMyOrders(data.orders);
+        console.log("orders",formatDistanceToNow(new Date(data.orders[0].createdAt), { addSuffix: true }));   
       } else {
         console.error(data.message);
       }
@@ -168,6 +171,7 @@ const MyOrders = () => {
             <span>Order Id: {order._id}</span>
             <span>Payment: {order.paymentType}</span>
             <span>Total Amount: {currency}{order.amount}</span>
+            <span>{formatDistanceToNow(new Date(order.createdAt), { addSuffix: true })}</span>
           </div>
 
           {order.items.map((item, idx) => (
