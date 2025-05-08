@@ -40,7 +40,7 @@ export const registerUser = async (req, res) => {
     });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7D",
+      expiresIn: "1D",
     });
 
     res.cookie("token", token, {
@@ -48,7 +48,7 @@ export const registerUser = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "strict", // for enabling cross-site scripting (XSS) protection in production environment
       expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-      maxAge: 60 * 60 * 24 * 7, 
+      maxAge: 60 * 60 * 24 * 1000, 
     });
 
     return res.status(201).json({
@@ -99,7 +99,7 @@ export const loginUser = async (req, res) => {
 
     // Create JWT token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7D",
+      expiresIn: "1D",
     });
 
     // Set token in cookie
@@ -108,7 +108,7 @@ export const loginUser = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
       expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-      maxAge: 60 * 60 * 24 * 7, 
+      maxAge: 60 * 60 * 24 * 1000, 
     });
 
     // Respond with user info

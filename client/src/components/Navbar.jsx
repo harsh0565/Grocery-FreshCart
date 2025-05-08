@@ -129,7 +129,7 @@ const Navbar = () => {
         className={`${open ? 'flex' : 'hidden'
           } absolute top-[60px] left-0 w-full bg-white shadow-md flex-col items-start gap-4 px-5 py-6 text-base md:hidden transition-all duration-300 z-20`}
       >
-        <Link to="/seller" onClick={() => setOpen(false)}>Seller Login</Link>
+        {!user && <Link to="/seller" onClick={() => setOpen(false)}>Seller Login</Link>}
         <Link to="/" onClick={() => setOpen(false)}>Home</Link>
         <Link to="/products" onClick={() => setOpen(false)}>All Products</Link>
         {user && (

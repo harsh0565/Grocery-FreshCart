@@ -33,6 +33,21 @@ const MyOrders = () => {
             fetchOrders();
         }
     }, [user]);
+    if (!user) {
+        return (
+            <div className="mt-16 text-center text-xl font-semibold text-gray-600">
+                Please login to see orders
+            </div>
+        );
+    }
+
+    if (user && myOrders.length === 0) {
+        return (
+            <div className="mt-16 text-center text-xl font-semibold text-gray-600">
+                No orders available
+            </div>
+        );
+    }
 
     return (
         <div className="mt-16 pb-16">
