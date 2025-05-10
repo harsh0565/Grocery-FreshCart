@@ -5,6 +5,7 @@
 FreshCart is a modern, responsive e-commerce web application designed to deliver a seamless and secure shopping experience. Users can browse categorized products, manage their cart, place orders, and track order history with ease.
 
 ---
+[Preview](./preview.png)
 
 ## 🚀 Features
 
