@@ -38,12 +38,10 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all sticky top-0 bg-white shadow z-50">
 
-      {/* Logo */}
       <Link to="/" onClick={() => setOpen(false)}>
         <img className=" h-10 scale-250 mr-30" src={assets.logo} alt="logo" />
       </Link>
 
-      {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-8">
         {!user && <Link to="/seller" onClick={() => setOpen(false)}>Seller Login</Link>}
         <Link to="/" onClick={() => setOpen(false)}>Home</Link>
@@ -53,19 +51,16 @@ const Navbar = () => {
         )}
         <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
 
-        {/* Search Box */}
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
           <input onChange={(e) => setSearchQuery(e.target.value)} className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500" type="text" placeholder="Search products" />
           <img src={assets.search_icon} className="w-4 h-4" alt="Search" />
         </div>
 
-        {/* Cart Icon */}
         <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
           <img src={assets.cart_icon} alt="Cart" className="w-6 opacity-80" />
           <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">{getCartCount()}</button>
         </div>
 
-        {/* Login/Profile */}
         {!user ? (
           <button
             onClick={() => setShowUserLogin(true)}
@@ -104,16 +99,16 @@ const Navbar = () => {
 
 
         )}
+
+      
       </div>
 
 
       <div className='flex items-center gap-6 md:hidden'>
-        {/* Cart Icon */}
         <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
           <img src={assets.cart_icon} alt="Cart" className="w-6 opacity-80" />
           <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">{getCartCount()}</button>
         </div>
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Menu"
@@ -124,7 +119,6 @@ const Navbar = () => {
       </div>
 
 
-      {/* Mobile Menu */}
       <div
         className={`${open ? 'flex' : 'hidden'
           } absolute top-[60px] left-0 w-full bg-white shadow-md flex-col items-start gap-4 px-5 py-6 text-base md:hidden transition-all duration-300 z-20`}
@@ -139,7 +133,6 @@ const Navbar = () => {
 
 
 
-        {/* Login/Logout */}
         {!user ? (
           <button
             onClick={() => { setShowUserLogin(true); setOpen(false); }}
@@ -155,6 +148,7 @@ const Navbar = () => {
             Logout
           </button>
         )}
+       
       </div>
     </nav>
   )

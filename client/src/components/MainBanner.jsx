@@ -32,20 +32,15 @@ import { Link } from 'react-router-dom'
 const MainBanner = () => {
     return (
         <div className="relative">
-            {/* Background Images */}
             <img src={assets.main_banner_bg} alt="Main Banner" className="w-full hidden md:block" />
             <img src={assets.main_banner_bg_sm} alt="Main Banner" className="w-full md:hidden" />
 
-            {/* Content (Text and Buttons) */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white px-4 sm:px-6 md:px-12 w-full">
-                {/* Main Text */}
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight text-primary-dull">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight text-primary-dull animate-typing">
                     Fresh Moments, Smarter Choices.
                 </h1>
 
-                {/* Buttons */}
                 <div className="flex justify-center gap-6 flex-col md:flex-row">
-                    {/* Shop Now Button */}
                     <Link
                         className="group flex items-center  gap-2 px-7 py-3 bg-primary hover:bg-primary-dull text-white transition-all rounded cursor-pointer mb-4 md:mb-0 sm:mb-4"
                         to="/products"
@@ -54,7 +49,6 @@ const MainBanner = () => {
                         <img src={assets.black_arrow_icon} alt="Arrow" className="md:hidden transition-all group-focus:translate-x-1" />
                     </Link>
                     
-                    {/* Explore Deals Button */}
                     <Link
                         className="group flex items-center gap-2 px-9 py-3 cursor-pointer hover:text-primary  text-black transition-all rounded hidden md:flex"
                         to="/products"

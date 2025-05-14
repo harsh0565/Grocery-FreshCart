@@ -15,3 +15,21 @@
 .no-scrollbar::-webkit-scrollbar{
 display: none;
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+.animate-typing {
+  display: inline-block;
+ 
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30) infinite;
+}

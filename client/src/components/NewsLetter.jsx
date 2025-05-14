@@ -5,11 +5,10 @@ const NewsLetter = () => {
     return (
         <div className="flex flex-col items-center justify-center text-center space-y-4 px-6 md:px-0 mt-16">
             {/* Heading */}
-            <h1 className="text-3xl md:text-4xl font-semibold text-primary-dull">
+            <h1 className="text-3xl md:text-4xl font-semibold text-primary-dull animate-typing">
                 Never Miss a Deal!
             </h1>
 
-            {/* Subheading */}
             <p className="text-lg text-gray-600 md:text-xl mb-6">
                 Subscribe to get the latest offers, new arrivals, and exclusive discounts.
             </p>

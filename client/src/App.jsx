@@ -24,9 +24,13 @@ import Faqs from './pages/Faqs';
 import ReturnRefundPolicy from './pages/ReturnRefundPolicy';
 import Contacts from './pages/seller/Contacts';
 import ForgotPassword from './components/ForgotPassword';
+
+
+
+
 const App = () => {
   const isSellerPath = useLocation().pathname.includes('/seller');
-  const { showUserLogin, isSeller,user } = useAppContext();
+  const { showUserLogin, isSeller, user } = useAppContext();
   return (
     <div className='text-default min-h-screen text-gray-700 bg-white'>
       {isSellerPath ? null : <Navbar />}
@@ -36,9 +40,11 @@ const App = () => {
       }} />
       {/* <Home/> */}
       <div className={`${isSellerPath ? "" : "px-6 md:px-16 lg:px-24 xl:px-32"}`}>
+
         <Routes>
           <Route path="/" element={<Home />} />
-         {!user && <Route path="/forgot-password" element={< ForgotPassword/>} />}
+        
+          {!user && <Route path="/forgot-password" element={< ForgotPassword />} />}
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/return-policy" element={<ReturnRefundPolicy />} />
           <Route path="/contact" element={<Contact />} />
