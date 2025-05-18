@@ -64,6 +64,8 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
+
+     
       {!isSellerPath && <Footer />}
     </div>
   )
@@ -71,10 +73,3 @@ const App = () => {
 
 export default App
 
-
-// 46 min 50 sec 26 april
-
-// 2 hr 30 min
-// 3hr 13 min 14 sec 
-
-//  4 hr 19 min

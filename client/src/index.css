@@ -33,3 +33,19 @@ display: none;
   width: 0;
   animation: typing 3s steps(30) infinite;
 }
+
+
+
+#scale:hover{
+  transform: scale(1.09);
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(15, 15, 15, 0.5);
+}
+#nav-scale:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  color: #4fbf8b;
+
+  
+}

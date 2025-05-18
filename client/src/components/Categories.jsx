@@ -10,7 +10,7 @@ const Categories = () => {
       <p className="text-2xl font-medium md:text-3xl">Categories</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6 mt-6">
         {categories.map((category, index) => (
-          <div
+          <div id='scale'
             key={index}
             className="group flex flex-col items-center justify-center cursor-pointer gap-2 py-5 px-3 rounded-lg shadow-md hover:shadow-lg transition duration-300"
             style={{ backgroundColor: category.bgColor }}
