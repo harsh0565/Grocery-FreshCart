@@ -24,6 +24,7 @@ import Faqs from './pages/Faqs';
 import ReturnRefundPolicy from './pages/ReturnRefundPolicy';
 import Contacts from './pages/seller/Contacts';
 import ForgotPassword from './components/ForgotPassword';
+import SellerAdminPanel from './pages/seller/SellerAdminPanel';
 
 
 
@@ -56,12 +57,15 @@ const App = () => {
           <Route path="/my-orders" element={<MyOrders />} />
           <Route path="/loader" element={<Loading />} />
           <Route path="/seller" element={isSeller ? <SellerLayout /> : <SellerLogin />} >
+          {/* <Route path="/seller" element={isSeller ? <SellerAdminPanel /> : <SellerLogin />} > */}
             <Route index element={isSeller ? <AddProduct /> : null} />
             <Route path='product-list' element={<ProductList />} />
             <Route path='orders' element={<Orders />} />
+            <Route path='admin' element={<SellerAdminPanel />} />
             <Route path='contact' element={<Contacts />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
+            {/* <Route path="/admin" element={<SellerAdminPanel />} /> */}
         </Routes>
       </div>
 

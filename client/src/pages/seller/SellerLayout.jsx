@@ -41,11 +41,11 @@ const SellerLayout = () => {
     return (
         <>
             <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white transition-all duration-300">
-                <Link to="/">
+                <Link to="/seller">
                     <img src={assets.logo} alt="Logo" className='cursor-pointer  h-10 scale-300 ml-20 mr-30' />
                 </Link>
                 <div className="flex items-center gap-5 text-gray-500">
-                    <p>Hi! Admin</p>
+                    <p onClick={() => navigate("/seller/admin")}  className='cursor-pointer'>Hi! Admin</p>
                     <button onClick={logout} className='cursor-pointer border-gray-300 border rounded-full text-sm px-4 py-1'>Logout</button>
                 </div>
             </div>
