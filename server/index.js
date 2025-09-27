@@ -23,7 +23,7 @@ const startServer = async () => {
     await connectDB();
     // await connectCloudinary();
 
-    const allowedOrigin = ['http://localhost:5173' , 'https://freshcart-red.vercel.app' , 'http://localhost:8100', 'capacitor://localhost', 'http://localhost' , 'ionic://localhost'];
+    const allowedOrigin = ['http://localhost:5173' , 'https://freshcart-red.vercel.app' , 'http://localhost:8100', 'capacitor://localhost', 'https://localhost' , 'ionic://localhost'];
     app.post('/stripe',express.raw({ type: 'application/json' }),stripeWebhook);
 
     app.use(express.json());
